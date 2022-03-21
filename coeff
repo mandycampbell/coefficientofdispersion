@@ -1,0 +1,11 @@
+coeff <- function(vector){
+  vector_new <- vector(mode="numeric")
+  for(i in vector) {
+    inside <- abs(i-(median(vector)))
+    vector_new <- append(vector_new, inside)
+  }
+  sum_of_vector <- sum(vector_new)
+  numerator <- sum_of_vector / length(vector)
+  coefficient <- numerator / median(vector)
+  return(coefficient)
+}
